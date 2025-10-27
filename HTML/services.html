@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EfoyBus Services</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/landing.css">
+  <link rel="stylesheet" href="../css/services.css">
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">
+        <p>🚌 Efoy<span>Bus</span></p>
+      </div>
+
+      <nav class="nav-links">
+        <a href="../html/landing.html">Home</a>
+        <a href="#features">Features</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a href="../html/book.html" class="btn-book">Get Started</a>
+
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+    </div>
+  </header>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="services-hero">
+    <h1>Our Premium Services</h1>
+    <p class="subtitle">Comfortable, reliable, and safe journeys across Ethiopia</p>
+  </section>
+
+  <!-- ===== SERVICE CATEGORIES ===== -->
+  <section class="services-categories">
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-bus"></i></div>
+      <h2>Intercity Bus Booking</h2>
+      <ul>
+        <li>Comfortable AC buses</li>
+        <li>Instant seat confirmation</li>
+        <li>Affordable pricing</li>
+        <li>Flexible travel schedules</li>
+      </ul>
+      <a href="#" class="service-btn">Book a Bus</a>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-route"></i></div>
+      <h2>Route Management</h2>
+      <ul>
+        <li>Detailed route maps</li>
+        <li>Real-time bus tracking</li>
+        <li>Custom route suggestions</li>
+        <li>Integrated stop information</li>
+      </ul>
+      <a href="#" class="service-btn">Explore Routes</a>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-user-shield"></i></div>
+      <h2>Safe Travel Experience</h2>
+      <ul>
+        <li>Verified drivers</li>
+        <li>GPS monitoring</li>
+        <li>24/7 support</li>
+        <li>Onboard safety checks</li>
+      </ul>
+      <a href="#" class="service-btn">Learn More</a>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-clock"></i></div>
+      <h2>Timely Departures</h2>
+      <ul>
+        <li>Real-time schedule updates</li>
+        <li>Automatic notifications</li>
+        <li>Guaranteed punctuality</li>
+        <li>Smart booking reminders</li>
+      </ul>
+      <a href="#" class="service-btn">View Schedule</a>
+    </div>
+  </section>
+
+  <!-- ===== BENEFITS SECTION ===== -->
+  <section class="service-benefits" id="benefits">
+    <h2>Why Choose EfoyBus?</h2>
+    <div class="benefits-grid">
+      <div class="benefit-item">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Safe & Secure</h3>
+        <p>Every trip is monitored with real-time GPS and safety verification.</p>
+      </div>
+
+      <div class="benefit-item">
+        <i class="fas fa-wallet"></i>
+        <h3>Affordable Prices</h3>
+        <p>We guarantee budget-friendly fares without compromising comfort.</p>
+      </div>
+
+      <div class="benefit-item">
+        <i class="fas fa-headset"></i>
+        <h3>24/7 Support</h3>
+        <p>Our support team is always ready to assist you—day or night.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- About -->
+      <div class="footer-about">
+        <div class="footer-logo">🚌 <span>EfoyBus</span></div>
+        <p>Your trusted partner for unforgettable travel experiences. We specialize in safe and comfortable bus journeys across Ethiopia.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="../html/landing.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+          <li><a href="../html/about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+          <li><a href="../html/services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+          
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <p><i class="fas fa-map-marker-alt"></i> Bole Medhanialem, Addis Ababa</p>
+        <p><i class="fas fa-phone"></i> +251 123 456 789</p>
+        <p><i class="fas fa-envelope"></i> info@efoybus.com</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 EfoyBus. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,234 @@
+/* ================= BASE STYLES ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #1a1a1a;
+    line-height: 1.7;
+    scroll-behavior: smooth;
+}
+
+
+/* ================= HERO SECTION ================= */
+.about-hero {
+    height: 100vh;
+    background: linear-gradient(to right, #eaf3ff, #f7f9fc);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+.about-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+.about-hero .subtitle {
+    font-size: 1.5rem;
+    color: #444;
+}
+
+/* ================= MISSION SECTION ================= */
+.about-mission {
+    max-width: 1100px;
+    margin: 100px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+.about-mission h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+.about-mission p {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* ================= VALUES SECTION ================= */
+.about-values {
+    max-width: 1200px;
+    margin: 120px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+.about-values h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+.values-grid {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.value-card {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    max-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+.value-card i {
+    font-size: 2.5rem;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+.value-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+.value-card p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 60px 20px 30px 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+}
+.footer-about, .footer-links, .footer-contact {
+    flex: 1;
+    min-width: 250px;
+}
+.footer-logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.footer p {
+    color: #ccc;
+    line-height: 1.8;
+}
+.footer-links h3, .footer-contact h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.footer-links ul {
+    list-style: none;
+}
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+.footer-links ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.footer-links ul li a:hover {
+    color: #007bff;
+}
+.footer-contact p i {
+    margin-right: 8px;
+    color: #007bff;
+}
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    margin-top: 30px;
+    color: #777;
+    font-size: 0.95rem;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .about-hero h1 {
+        font-size: 3rem;
+    }
+    .about-hero .subtitle {
+        font-size: 1.3rem;
+    }
+    .values-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .value-card {
+        max-width: 90%;
+    }
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-hero h1 {
+        font-size: 2.2rem;
+    }
+    .about-hero .subtitle {
+        font-size: 1.1rem;
+    }
+}
+/* ================= VISION SECTION ================= */
+.about-vision {
+    max-width: 1100px;
+    margin: 100px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.about-vision h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #1a1a1a;
+}
+
+.about-vision p {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .about-vision h2 {
+        font-size: 2rem;
+    }
+    .about-vision p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-vision h2 {
+        font-size: 1.6rem;
+    }
+    .about-vision p {
+        font-size: 1rem;
+    }
+}

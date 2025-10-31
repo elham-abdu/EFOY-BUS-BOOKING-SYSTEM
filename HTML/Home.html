@@ -3,163 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EfoyBus Booking</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="../CSS/home.css">
+    <title>EfoyBus - Bus Booking Platform</title>
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚌</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/Home.css">
+    
 </head>
 <body>
-    <div class="container">
-        <h1><i class="fas fa-bus"></i> EfoyBus Booking</h1>
-        
-        <!-- Progress Bar -->
-        <div class="progress-bar">
-            <div class="progress-step">
-                <div class="step-number active">1</div>
-                <div class="step-label">Route</div>
+    <!-- Toggle Menu Button -->
+    <div class="toggle-menu">
+        <i class="fas fa-bus"></i>
+    </div>
+    
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fas fa-bus"></i>
             </div>
-            <div class="progress-step">
-                <div class="step-number">2</div>
-                <div class="step-label">Bus</div>
-            </div>
-            <div class="progress-step">
-                <div class="step-number">3</div>
-                <div class="step-label">Details</div>
-            </div>
-            <div class="progress-step">
-                <div class="step-number">4</div>
-                <div class="step-label">Payment</div>
-            </div>
-            <div class="progress-step">
-                <div class="step-number">5</div>
-                <div class="step-label">Confirm</div>
-            </div>
+            <div class="logo-text">EfoyBus</div>
         </div>
         
-        <!-- Step 1: Select Route -->
-        <div class="form-step active" id="step1">
-            <h2>Select Your Route</h2>
-            <div class="form-group">
-                <label for="from"><i class="fas fa-map-marker-alt"></i> From:</label>
-                <select id="from" required>
-                    <option value="">Select departure city</option>
-                    <option value="Addis Ababa">Addis Ababa</option>
-                    <option value="Bahir Dar">Bahir Dar</option>
-                    <option value="Gondar">Gondar</option>
-                    <option value="Hawassa">Hawassa</option>
-                    <option value="Mekelle">Mekelle</option>
-                    <option value="Dire Dawa">Dire Dawa</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="to"><i class="fas fa-map-marker"></i> To:</label>
-                <select id="to" required>
-                    <option value="">Select destination city</option>
-                    <option value="Addis Ababa">Addis Ababa</option>
-                    <option value="Bahir Dar">Bahir Dar</option>
-                    <option value="Gondar">Gondar</option>
-                    <option value="Hawassa">Hawassa</option>
-                    <option value="Mekelle">Mekelle</option>
-                    <option value="Dire Dawa">Dire Dawa</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="date"><i class="far fa-calendar-alt"></i> Travel Date:</label>
-                <input type="date" id="date" required>
-            </div>
-            <button id="next1"><i class="fas fa-search"></i> Search Buses</button>
-        </div>
+       <div class="nav-section">
+    <h3>Main Menu</h3>
+
+    <a class="nav-item active" href="../HTML/Home.html">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+    </a>
+
+    <a class="nav-item" href="../HTML/BusBooking.html">
+        <i class="fas fa-bus-alt"></i>
+        <span>Bus Booking</span>
+    </a>
+
+    <a class="nav-item" href="../HTML/History.html">
+        <i class="fas fa-history"></i>
+        <span>Booking History</span>
+    </a>
+
+    <a class="nav-item" href="../HTML/Refund.html">
+        <i class="fas fa-undo-alt"></i>
+        <span>Refund Request</span>
+    </a>
+</div>
+
         
-        <!-- Step 2: Select Bus -->
-        <div class="form-step" id="step2">
-            <h2>Available Buses</h2>
-            <p id="route-info" style="font-size: 1.1em; margin-bottom: 20px;"></p>
-            <div class="bus-list" id="bus-list">
-                <!-- Buses will be loaded here -->
-            </div>
-            
-            <!-- Seat Selection -->
-            <div class="seat-selection" id="seat-selection">
-                <h3>Select Your Seats</h3>
-                <p>Click on available seats to select them. Green seats are available, red are already booked.</p>
-                
-                <div class="seat-map-container">
-                    <div class="bus-layout" id="bus-layout">
-                        <!-- Bus layout will be loaded here -->
-                    </div>
+        <div class="divider"></div>
+        
+        <div class="nav-section">
+            <h3>Preferences</h3>
+            <div class="theme-toggle">
+                <div class="nav-item">
+                    <i class="fas fa-moon"></i>
+                    <span>Dark Mode</span>
                 </div>
-                
-                <div class="price-summary">
-                    <h4>Price Summary</h4>
-                    <p>Price per seat: <span id="price-per-seat">0</span> ETB</p>
-                    <p>Selected seats: <span id="selected-seats-count">0</span></p>
-                    <p>Total price: <span id="total-price">0</span> ETB</p>
-                    <div class="selected-seats" id="selected-seats-list"></div>
+                <div class="toggle-container">
+                    <div class="toggle-circle"></div>
                 </div>
             </div>
             
-            <div class="navigation">
-                <button id="prev2"><i class="fas fa-arrow-left"></i> Back</button>
-                <button id="next2" disabled>Continue <i class="fas fa-arrow-right"></i></button>
+            <div class="language-selector">
+                <div class="nav-item">
+                    <i class="fas fa-globe"></i>
+                    <span>Language</span>
+                </div>
+                <select>
+                    <option value="en">English</option>
+                    <option value="am">አማርኛ (Amharic)</option>
+                    <option value="om">Afaan Oromoo (Afan Oromo)</option>
+                </select>
             </div>
-        </div>
-        
-        <!-- Step 3: Passenger Details -->
-        <div class="form-step" id="step3">
-            <h2>Passenger Details</h2>
-            <div class="form-group">
-                <label for="name"><i class="fas fa-user"></i> Full Name:</label>
-                <input type="text" id="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email"><i class="fas fa-envelope"></i> Email:</label>
-                <input type="email" id="email" required>
-            </div>
-            <div class="form-group">
-                <label for="phone"><i class="fas fa-phone"></i> Phone Number:</label>
-                <input type="tel" id="phone" required>
-            </div>
-            <div class="navigation">
-                <button id="prev3"><i class="fas fa-arrow-left"></i> Back</button>
-                <button id="next3">Proceed to Payment <i class="fas fa-arrow-right"></i></button>
-            </div>
-        </div>
-        
-        <!-- Step 4: Payment -->
-        <div class="form-step" id="step4">
-            <h2>Payment Information</h2>
-            <div class="form-group">
-                <label for="card-number"><i class="far fa-credit-card"></i> Card Number:</label>
-                <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
-            </div>
-            <div class="form-group">
-                <label for="expiry"><i class="far fa-calendar"></i> Expiry Date:</label>
-                <input type="text" id="expiry" placeholder="MM/YY" required>
-            </div>
-            <div class="form-group">
-                <label for="cvv"><i class="fas fa-lock"></i> CVV:</label>
-                <input type="text" id="cvv" placeholder="123" required>
-            </div>
-            <div class="price-summary">
-                <h4>Payment Summary</h4>
-                <p>Bus: <span id="payment-bus-name"></span></p>
-                <p>Seats: <span id="payment-seats"></span></p>
-                <p>Total Amount: <span id="payment-total"></span> ETB</p>
-            </div>
-            <div class="navigation">
-                <button id="prev4"><i class="fas fa-arrow-left"></i> Back</button>
-                <button id="next4">Confirm Booking <i class="fas fa-check"></i></button>
-            </div>
-        </div>
-        
-        <!-- Step 5: Confirmation -->
-        <div class="form-step" id="step5">
-            <h2 style="color: #4CAF50;"><i class="fas fa-check-circle"></i> Booking Confirmed!</h2>
-            <div class="confirmation-card" id="confirmation-details">
-                <!-- Booking details will be shown here -->
-            </div>
-            <button id="new-booking"><i class="fas fa-bus"></i> Book Another Ticket</button>
         </div>
     </div>
-   <script src="../JS/Home.js"></script>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Welcome Section - No Box, Just Beautiful Text -->
+        <div class="welcome-section">
+            <div class="bus-icon">
+                <i class="fas fa-bus"></i>
+            </div>
+            <h1 class="welcome-title">Welcome to EfoyBus</h1>
+            <p class="welcome-subtitle">Your Journey Begins Here</p>
+            <p class="welcome-description">Book bus tickets effortlessly across Ethiopia with our easy-to-use platform. Travel with comfort, safety, and convenience.</p>
+            <a href="#" class="cta-button">Book Your Trip Now</a>
+        </div>
+        
+        <!-- Simple Chat Interface -->
+        <div class="chat-interface">
+            <div class="chat-input-container">
+                <div class="chat-input">
+                    <input type="text" id="userInput" placeholder="Ask me anything about bus booking..." autocomplete="off">
+                    <button id="sendButton">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Frequently Asked Questions -->
+            <div class="faq-section">
+                <h3 class="faq-title">Frequently Asked Questions</h3>
+                <div class="faq-buttons">
+                    <button class="faq-button" data-question="How do I book a bus ticket?">How to book a ticket?</button>
+                    <button class="faq-button" data-question="What are the bus schedules?">Bus schedules</button>
+                    <button class="faq-button" data-question="How much does a ticket cost?">Ticket prices</button>
+                    <button class="faq-button" data-question="Can I cancel my booking?">Cancellation policy</button>
+                    <button class="faq-button" data-question="What routes do you serve?">Available routes</button>
+                    <button class="faq-button" data-question="How do I get a refund?">Refund process</button>
+                </div>
+            </div>
+            
+            <!-- Chat Messages -->
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    Hello! I'm your EfoyBus assistant. How can I help you with your bus booking today?
+                    <div class="message-time">Just now</div>
+                </div>
+            </div>
+            
+            <div class="quick-actions">
+                <div class="action-box" data-action="book">
+                    <div class="action-icon">
+                        <i class="fas fa-ticket-alt"></i>
+                    </div>
+                    <div class="action-title">Book a Bus</div>
+                    <div class="action-description">Find and book your bus tickets quickly</div>
+                </div>
+                
+                <div class="action-box" data-action="routes">
+                    <div class="action-icon">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <div class="action-title">Check Routes</div>
+                    <div class="action-description">Explore available bus routes and schedules</div>
+                </div>
+                
+                <div class="action-box" data-action="prices">
+                    <div class="action-icon">
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <div class="action-title">View Prices</div>
+                    <div class="action-description">Compare prices for different routes</div>
+                </div>
+                
+                <div class="action-box" data-action="support">
+                    <div class="action-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="action-title">Get Help</div>
+                    <div class="action-description">Contact support for assistance</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../JS/Home.js"></script>
+
 </body>
 </html>

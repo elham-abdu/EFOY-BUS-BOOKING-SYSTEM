@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EfoyBus | Refund Request</title>
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚌</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/Refund.css">
+   
+</head>
+<body>
+    <!-- Toggle Menu Button - ADDED -->
+    <div class="toggle-menu">
+        <i class="fas fa-bus"></i>
+    </div>
+    
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fas fa-bus"></i>
+            </div>
+            <div class="logo-text">EfoyBus</div>
+        </div>
+        
+       <div class="nav-section">
+    <h3>Main Menu</h3>
+
+    <a class="nav-item active" href="../HTML/Home.html">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+    </a>
+
+    <a class="nav-item" href="../HTML/BusBooking.html">
+        <i class="fas fa-bus-alt"></i>
+        <span>Bus Booking</span>
+    </a>
+
+    <a class="nav-item" href="../HTML/History.html">
+        <i class="fas fa-history"></i>
+        <span>Booking History</span>
+    </a>
+
+    <a class="nav-item" href="../HTML/Refund.html">
+        <i class="fas fa-undo-alt"></i>
+        <span>Refund Request</span>
+    </a>
+</div>
+        
+        <div class="divider"></div>
+        
+        <div class="nav-section">
+            <h3>Preferences</h3>
+            <div class="theme-toggle">
+                <div class="nav-item">
+                    <i class="fas fa-moon"></i>
+                    <span>Dark Mode</span>
+                </div>
+                <div class="toggle-container">
+                    <div class="toggle-circle"></div>
+                </div>
+            </div>
+            
+            <div class="language-selector">
+                <div class="nav-item">
+                    <i class="fas fa-globe"></i>
+                    <span>Language</span>
+                </div>
+                <select>
+                    <option value="en">English</option>
+                    <option value="am">አማርኛ (Amharic)</option>
+                    <option value="om">Afaan Oromoo (Afan Oromo)</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        <div class="refund-header">
+            <h1 class="refund-title">Refund Request</h1>
+            <p class="refund-subtitle">Request a refund for your bus booking quickly and easily</p>
+        </div>
+        
+        <div class="refund-container">
+            <!-- Refund Form Section -->
+            <div class="refund-form-container">
+                <h2 class="section-title">
+                    <i class="fas fa-file-alt"></i>
+                    Refund Application
+                </h2>
+                
+                <div class="eligible-bookings">
+                    <h3 class="section-title">
+                        <i class="fas fa-ticket-alt"></i>
+                        Select Booking to Refund
+                    </h3>
+                    
+                    <div class="booking-card selected">
+                        <div class="booking-header">
+                            <span class="booking-id">#EF2025102</span>
+                            <span class="status status-upcoming">Upcoming</span>
+                        </div>
+                        <div class="booking-route">Adama → Hawassa</div>
+                        <div class="booking-details">
+                            <span><i class="far fa-calendar"></i> Oct 30, 2025</span>
+                            <span><i class="far fa-clock"></i> 10:30 AM</span>
+                            <span><i class="fas fa-chair"></i> Seat 7B</span>
+                        </div>
+                    </div>
+                    
+                    <div class="booking-card">
+                        <div class="booking-header">
+                            <span class="booking-id">#EF2025104</span>
+                            <span class="status status-upcoming">Upcoming</span>
+                        </div>
+                        <div class="booking-route">Addis Ababa → Jimma</div>
+                        <div class="booking-details">
+                            <span><i class="far fa-calendar"></i> Nov 15, 2025</span>
+                            <span><i class="far fa-clock"></i> 09:45 AM</span>
+                            <span><i class="fas fa-chair"></i> Seat 5D</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <form id="refundForm">
+                    <div class="form-group">
+                        <label class="form-label" for="refundReason">Refund Reason</label>
+                        <select class="form-select" id="refundReason" required>
+                            <option value="">Select a reason</option>
+                            <option value="change_plans">Change of travel plans</option>
+                            <option value="emergency">Emergency situation</option>
+                            <option value="double_booking">Double booking</option>
+                            <option value="bus_delay">Bus delay/cancellation</option>
+                            <option value="other">Other reason</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="refundDescription">Additional Details</label>
+                        <textarea class="form-textarea" id="refundDescription" placeholder="Please provide more details about your refund request..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="refundMethod">Refund Method</label>
+                        <select class="form-select" id="refundMethod" required>
+                            <option value="">Select refund method</option>
+                            <option value="original_payment">Original payment method</option>
+                            <option value="bank_transfer">Bank transfer</option>
+                            <option value="mobile_money">Mobile money</option>
+                            <option value="wallet_credit">EfoyBus wallet credit</option>
+                        </select>
+                    </div>
+                    
+                    <div class="refund-amount">
+                        <div class="amount-label">Refund Amount</div>
+                        <div class="amount-value">ETB 180</div>
+                        <small>* 85% refund as per cancellation policy</small>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        Submit Refund Request
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Refund Information Section -->
+            <div class="refund-info-container">
+                <h2 class="section-title">
+                    <i class="fas fa-info-circle"></i>
+                    Refund Information
+                </h2>
+                
+                <div class="refund-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Submit Request</h4>
+                            <p>Fill out the refund form with your booking details and reason for cancellation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Review Process</h4>
+                            <p>Our team will review your request within 24 hours and verify eligibility.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Approval & Processing</h4>
+                            <p>Once approved, your refund will be processed within 3-5 business days.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Refund Completion</h4>
+                            <p>You'll receive confirmation and the refund in your selected method.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="refund-policy">
+                    <h3 class="policy-title">
+                        <i class="fas fa-shield-alt"></i>
+                        Refund Policy
+                    </h3>
+                    <ul class="policy-list">
+                        <li>100% refund if cancelled 48+ hours before departure</li>
+                        <li>85% refund if cancelled 24-48 hours before departure</li>
+                        <li>50% refund if cancelled 6-24 hours before departure</li>
+                        <li>No refund if cancelled less than 6 hours before departure</li>
+                        <li>Full refund for bus operator cancellations</li>
+                    </ul>
+                </div>
+                
+                <div style="margin-top: 25px; padding: 15px; background: rgba(255, 193, 7, 0.1); border-radius: 10px; border: 1px solid rgba(255, 193, 7, 0.2);">
+                    <h4 style="color: #ffc107; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Important Notice
+                    </h4>
+                    <p style="font-size: 0.9rem; color: var(--text-light);">
+                        Refund processing time may vary depending on your payment method. Bank transfers typically take 3-5 business days, while wallet credits are instant.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../JS/Refund.js"></script>
+</body>
+</html>

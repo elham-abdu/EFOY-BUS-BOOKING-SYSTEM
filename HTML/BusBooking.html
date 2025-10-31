@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EfoyBus Booking</title>
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚌</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/BusBooking.css">
+</head>
+<body>
+    <!-- Toggle Menu Button - ADDED -->
+    <div class="toggle-menu">
+        <i class="fas fa-bus"></i>
+    </div>
+    
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fas fa-bus"></i>
+            </div>
+            <div class="logo-text">EfoyBus</div>
+        </div>
+        
+         <div class="nav-section">
+    <h3>Main Menu</h3>
+
+    <a class="nav-item active" href="../HTML/Home.html">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+    </a>
+
+    <a class="nav-item" href="../HTML/BusBooking.html">
+        <i class="fas fa-bus-alt"></i>
+        <span>Bus Booking</span>
+    </a>
+
+    <a class="nav-item" href="../HTML/History.html">
+        <i class="fas fa-history"></i>
+        <span>Booking History</span>
+    </a>
+
+    <a class="nav-item" href="../HTML/Refund.html">
+        <i class="fas fa-undo-alt"></i>
+        <span>Refund Request</span>
+    </a>
+</div>
+        
+        <div class="divider"></div>
+        
+        <div class="nav-section">
+            <h3>Preferences</h3>
+            <div class="theme-toggle">
+                <div class="nav-item">
+                    <i class="fas fa-moon"></i>
+                    <span>Dark Mode</span>
+                </div>
+                <div class="toggle-container">
+                    <div class="toggle-circle"></div>
+                </div>
+            </div>
+            
+            <div class="language-selector">
+                <div class="nav-item">
+                    <i class="fas fa-globe"></i>
+                    <span>Language</span>
+                </div>
+                <select>
+                    <option value="en">English</option>
+                    <option value="am">አማርኛ (Amharic)</option>
+                    <option value="om">Afaan Oromoo (Afan Oromo)</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        <div class="booking-header">
+            <h1 class="booking-title">Bus Booking</h1>
+            <p class="booking-subtitle">Book your bus tickets in just a few simple steps</p>
+        </div>
+        
+        <div class="booking-container">
+            <!-- Progress Bar -->
+            <div class="progress-bar">
+                <div class="progress-step">
+                    <div class="step-number active">1</div>
+                    <div class="step-label">Route</div>
+                </div>
+                <div class="progress-step">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Bus</div>
+                </div>
+                <div class="progress-step">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Details</div>
+                </div>
+                <div class="progress-step">
+                    <div class="step-number">4</div>
+                    <div class="step-label">Payment</div>
+                </div>
+                <div class="progress-step">
+                    <div class="step-number">5</div>
+                    <div class="step-label">Confirm</div>
+                </div>
+            </div>
+            
+            <!-- Step 1: Select Route -->
+            <div class="form-step active" id="step1">
+                <h2 class="step-title"><i class="fas fa-route"></i> Select Your Route</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="from" class="form-label"><i class="fas fa-map-marker-alt"></i> From:</label>
+                        <select id="from" class="form-select" required>
+                            <option value="">Select departure city</option>
+                            <option value="Addis Ababa">Addis Ababa</option>
+                            <option value="Bahir Dar">Bahir Dar</option>
+                            <option value="Gondar">Gondar</option>
+                            <option value="Hawassa">Hawassa</option>
+                            <option value="Mekelle">Mekelle</option>
+                            <option value="Dire Dawa">Dire Dawa</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="to" class="form-label"><i class="fas fa-map-marker"></i> To:</label>
+                        <select id="to" class="form-select" required>
+                            <option value="">Select destination city</option>
+                            <option value="Addis Ababa">Addis Ababa</option>
+                            <option value="Bahir Dar">Bahir Dar</option>
+                            <option value="Gondar">Gondar</option>
+                            <option value="Hawassa">Hawassa</option>
+                            <option value="Mekelle">Mekelle</option>
+                            <option value="Dire Dawa">Dire Dawa</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="date" class="form-label"><i class="far fa-calendar-alt"></i> Travel Date:</label>
+                    <input type="date" id="date" class="form-input" required>
+                </div>
+                <div class="navigation">
+                    <div></div> <!-- Empty div for spacing -->
+                    <button id="next1" class="btn"><i class="fas fa-search"></i> Search Buses</button>
+                </div>
+            </div>
+            
+            <!-- Step 2: Select Bus -->
+            <div class="form-step" id="step2">
+                <h2 class="step-title"><i class="fas fa-bus"></i> Available Buses</h2>
+                <p id="route-info" style="font-size: 1.1em; margin-bottom: 25px; padding: 15px; background: rgba(58, 134, 255, 0.1); border-radius: 10px;"></p>
+                <div class="bus-list" id="bus-list">
+                    <!-- Buses will be loaded here -->
+                </div>
+                
+                <!-- Seat Selection -->
+                <div class="seat-selection" id="seat-selection">
+                    <h3 class="step-title"><i class="fas fa-chair"></i> Select Your Seats</h3>
+                    <p style="margin-bottom: 20px;">Click on available seats to select them. Green seats are available, red are already booked.</p>
+                    
+                    <div class="seat-map-container">
+                        <div class="bus-layout" id="bus-layout">
+                            <!-- Bus layout will be loaded here -->
+                        </div>
+                    </div>
+                    
+                    <div class="price-summary">
+                        <h4>Price Summary</h4>
+                        <p>Price per seat: <span id="price-per-seat">0</span> ETB</p>
+                        <p>Selected seats: <span id="selected-seats-count">0</span></p>
+                        <p>Total price: <span id="total-price">0</span> ETB</p>
+                        <div class="selected-seats" id="selected-seats-list"></div>
+                    </div>
+                </div>
+                
+                <div class="navigation">
+                    <button id="prev2" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Back</button>
+                    <button id="next2" class="btn" disabled>Continue <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            
+            <!-- Step 3: Passenger Details -->
+            <div class="form-step" id="step3">
+                <h2 class="step-title"><i class="fas fa-user"></i> Passenger Details</h2>
+                <div class="form-group">
+                    <label for="name" class="form-label"><i class="fas fa-user"></i> Full Name:</label>
+                    <input type="text" id="name" class="form-input" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email" class="form-label"><i class="fas fa-envelope"></i> Email:</label>
+                        <input type="email" id="email" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="form-label"><i class="fas fa-phone"></i> Phone Number:</label>
+                        <input type="tel" id="phone" class="form-input" required>
+                    </div>
+                </div>
+                <div class="navigation">
+                    <button id="prev3" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Back</button>
+                    <button id="next3" class="btn">Proceed to Payment <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            
+            <!-- Step 4: Payment -->
+            <div class="form-step" id="step4">
+                <h2 class="step-title"><i class="fas fa-credit-card"></i> Payment Information</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="card-number" class="form-label"><i class="far fa-credit-card"></i> Card Number:</label>
+                        <input type="text" id="card-number" class="form-input" placeholder="1234 5678 9012 3456" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="expiry" class="form-label"><i class="far fa-calendar"></i> Expiry Date:</label>
+                        <input type="text" id="expiry" class="form-input" placeholder="MM/YY" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cvv" class="form-label"><i class="fas fa-lock"></i> CVV:</label>
+                    <input type="text" id="cvv" class="form-input" placeholder="123" required>
+                </div>
+                <div class="price-summary">
+                    <h4>Payment Summary</h4>
+                    <p>Bus: <span id="payment-bus-name"></span></p>
+                    <p>Seats: <span id="payment-seats"></span></p>
+                    <p>Total Amount: <span id="payment-total"></span> ETB</p>
+                </div>
+                <div class="navigation">
+                    <button id="prev4" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Back</button>
+                    <button id="next4" class="btn">Confirm Booking <i class="fas fa-check"></i></button>
+                </div>
+            </div>
+            
+            <!-- Step 5: Confirmation -->
+            <div class="form-step" id="step5">
+                <h2 class="step-title" style="color: #4CAF50;"><i class="fas fa-check-circle"></i> Booking Confirmed!</h2>
+                <div class="confirmation-card" id="confirmation-details">
+                    <!-- Booking details will be shown here -->
+                </div>
+                <div class="navigation">
+                    <div></div> <!-- Empty div for spacing -->
+                    <button id="new-booking" class="btn"><i class="fas fa-bus"></i> Book Another Ticket</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="../JS/BusBooking.js"></script>
+</body>
+</html>

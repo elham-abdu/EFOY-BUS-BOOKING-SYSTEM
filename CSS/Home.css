@@ -39,6 +39,7 @@
             transition: var(--transition);
             display: flex;
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
         /* Toggle Menu Button */
@@ -59,6 +60,13 @@
             z-index: 1000;
             box-shadow: var(--shadow);
             transition: var(--transition);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .toggle-menu.hidden {
+            opacity: 0;
+            visibility: hidden;
         }
 
         .toggle-menu:hover {
@@ -177,12 +185,15 @@
 
         .toggle-container {
             position: relative;
-            width: 50px;
-            height: 24px;
+            width: 60px;
+            height: 30px;
             background-color: #ccc;
-            border-radius: 12px;
+            border-radius: 15px;
             cursor: pointer;
             transition: var(--transition);
+            display: flex;
+            align-items: center;
+            padding: 0 5px;
         }
 
         .toggle-container.active {
@@ -191,17 +202,29 @@
 
         .toggle-circle {
             position: absolute;
-            top: 2px;
-            left: 2px;
-            width: 20px;
-            height: 20px;
+            top: 3px;
+            left: 3px;
+            width: 24px;
+            height: 24px;
             background-color: white;
             border-radius: 50%;
             transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .toggle-container.active .toggle-circle {
-            left: 28px;
+            left: 33px;
+        }
+
+        .toggle-icons {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            padding: 0 5px;
+            color: white;
+            font-size: 0.8rem;
         }
 
         .language-selector {
@@ -234,7 +257,6 @@
             flex-direction: column;
             min-height: 100vh;
             width: 100%;
-            cursor: pointer;
         }
 
         .main-content.shifted {
@@ -557,6 +579,10 @@
                 max-width: 300px;
             }
             
+            .main-content {
+                padding: 20px;
+            }
+            
             .main-content.shifted {
                 margin-left: 0;
             }
@@ -576,7 +602,12 @@
                 padding: 0 15px 25px;
             }
             
-            .logo-text, .nav-section h3, .nav-item span, .theme-toggle span, .language-selector span {
+            .logo-text, .nav-section h3, .nav-item span, .language-selector span {
+                display: none;
+            }
+            
+            /* Show Dark Mode text on mobile */
+            .theme-toggle span {
                 display: none;
             }
             
@@ -599,15 +630,94 @@
                 padding: 15px 0;
             }
             
-            .language-selector select {
+            /* Show toggle and language selector on mobile */
+            .toggle-container {
+                display: block;
+                width: 50px;
+                height: 25px;
+            }
+            
+            .toggle-circle {
+                width: 19px;
+                height: 19px;
+            }
+            
+            .toggle-container.active .toggle-circle {
+                left: 27px;
+            }
+            
+            /* Hide sun and moon icons on mobile */
+            .toggle-icons {
                 display: none;
+            }
+            
+            .language-selector select {
+                display: block;
+                width: 100%;
+                padding: 8px;
+                font-size: 0.8rem;
             }
             
             .divider {
                 margin: 15px 15px;
             }
             
-            .toggle-container {
-                display: none;
+            /* Make chat input responsive */
+            .chat-input-container {
+                flex-direction: row;
+                border-radius: 25px;
+                padding: 5px;
+            }
+            
+            .chat-input {
+                width: 100%;
+            }
+            
+            .chat-input input {
+                width: 100%;
+                padding: 12px 15px;
+                font-size: 14px;
+            }
+            
+            .chat-input button {
+                width: 45px;
+                height: 45px;
+                margin-left: 5px;
+            }
+        }
+
+        /* Extra small screens */
+        @media (max-width: 480px) {
+            .welcome-title {
+                font-size: 1.8rem;
+            }
+            
+            .welcome-subtitle {
+                font-size: 1rem;
+            }
+            
+            .welcome-description {
+                font-size: 0.9rem;
+            }
+            
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 0.9rem;
+            }
+            
+            .bus-icon {
+                font-size: 3rem;
+            }
+            
+            .main-content {
+                padding: 15px;
+            }
+            
+            .toggle-menu {
+                top: 15px;
+                left: 15px;
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
             }
         }

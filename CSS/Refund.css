@@ -1,5 +1,4 @@
-
-        :root {
+   :root {
             --primary-color: #3a86ff;
             --secondary-color: #2a76ef;
             --accent-color: #1a66df;
@@ -39,9 +38,10 @@
             transition: var(--transition);
             display: flex;
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
-        /* Toggle Menu Button - ADDED */
+        /* Toggle Menu Button */
         .toggle-menu {
             position: fixed;
             top: 20px;
@@ -59,6 +59,13 @@
             z-index: 1000;
             box-shadow: var(--shadow);
             transition: var(--transition);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .toggle-menu.hidden {
+            opacity: 0;
+            visibility: hidden;
         }
 
         .toggle-menu:hover {
@@ -75,14 +82,14 @@
             transition: var(--transition);
             height: 100vh;
             position: fixed;
-            left: -280px; /* CHANGED from 0 to -280px */
+            left: -280px;
             top: 0;
             overflow-y: auto;
-            z-index: 999; /* CHANGED from 100 to 999 */
+            z-index: 999;
         }
 
         .sidebar.active {
-            left: 0; /* ADDED */
+            left: 0;
         }
 
         .logo {
@@ -177,12 +184,15 @@
 
         .toggle-container {
             position: relative;
-            width: 50px;
-            height: 24px;
+            width: 60px;
+            height: 30px;
             background-color: #ccc;
-            border-radius: 12px;
+            border-radius: 15px;
             cursor: pointer;
             transition: var(--transition);
+            display: flex;
+            align-items: center;
+            padding: 0 5px;
         }
 
         .toggle-container.active {
@@ -191,17 +201,29 @@
 
         .toggle-circle {
             position: absolute;
-            top: 2px;
-            left: 2px;
-            width: 20px;
-            height: 20px;
+            top: 3px;
+            left: 3px;
+            width: 24px;
+            height: 24px;
             background-color: white;
             border-radius: 50%;
             transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .toggle-container.active .toggle-circle {
-            left: 28px;
+            left: 33px;
+        }
+
+        .toggle-icons {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            padding: 0 5px;
+            color: white;
+            font-size: 0.8rem;
         }
 
         .language-selector {
@@ -229,16 +251,15 @@
         .main-content {
             flex: 1;
             padding: 40px;
-            transition: var(--transition); /* ADDED */
+            transition: var(--transition);
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            width: 100%; /* ADDED */
-            cursor: pointer; /* ADDED */
+            width: 100%;
         }
 
         .main-content.shifted {
-            margin-left: 280px; /* ADDED */
+            margin-left: 280px;
         }
 
         /* Refund Page Styles */
@@ -261,11 +282,15 @@
             color: var(--text-light);
         }
 
+        /* ONLY CHANGED THIS SECTION - Made the refund containers smaller */
         .refund-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
             margin-bottom: 30px;
+            max-width: 95%; /* Added to make the container smaller */
+            margin-left: auto; /* Center the container */
+            margin-right: auto; /* Center the container */
         }
 
         @media (max-width: 1024px) {
@@ -476,6 +501,22 @@
             color: var(--primary-color);
         }
 
+        .status {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: inline-block;
+            text-align: center;
+            min-width: 100px;
+        }
+
+        .status-upcoming {
+            background: rgba(58, 134, 255, 0.1);
+            color: var(--primary-color);
+            border: 1px solid rgba(58, 134, 255, 0.2);
+        }
+
         .booking-route {
             font-weight: 600;
             margin-bottom: 5px;
@@ -488,24 +529,38 @@
             color: var(--text-light);
         }
 
+        /* Mobile Styles - Icon-only sidebar */
         @media (max-width: 768px) {
+            .main-content {
+                padding: 20px;
+            }
+            
+            .main-content.shifted {
+                margin-left: 0;
+            }
+            
+            /* Icon-only sidebar styles */
             .sidebar {
                 width: 70px;
-                overflow: visible;
-                left: -70px; /* CHANGED from 0 to -70px */
+                left: -70px;
             }
             
             .sidebar.active {
-                left: 0; /* ADDED */
-            }
-            
-            .logo-text, .nav-section h3, .nav-item span, .theme-toggle span, .language-selector span {
-                display: none;
+                left: 0;
             }
             
             .logo {
                 justify-content: center;
                 padding: 0 15px 25px;
+            }
+            
+            .logo-text, .nav-section h3, .nav-item span, .language-selector span {
+                display: none;
+            }
+            
+            /* Show Dark Mode text on mobile */
+            .theme-toggle span {
+                display: none;
             }
             
             .logo-icon {
@@ -527,17 +582,36 @@
                 padding: 15px 0;
             }
             
-            .language-selector select {
+            /* Show toggle and language selector on mobile */
+            .toggle-container {
+                display: block;
+                width: 50px;
+                height: 25px;
+            }
+            
+            .toggle-circle {
+                width: 19px;
+                height: 19px;
+            }
+            
+            .toggle-container.active .toggle-circle {
+                left: 27px;
+            }
+            
+            /* Hide sun and moon icons on mobile */
+            .toggle-icons {
                 display: none;
             }
             
-            .main-content {
-                margin-left: 0; /* CHANGED from 70px to 0 */
-                padding: 20px;
+            .language-selector select {
+                display: block;
+                width: 100%;
+                padding: 8px;
+                font-size: 0.8rem;
             }
             
-            .main-content.shifted {
-                margin-left: 0; /* ADDED */
+            .divider {
+                margin: 15px 15px;
             }
             
             .refund-title {
@@ -549,7 +623,8 @@
                 gap: 5px;
             }
             
-            .toggle-container {
-                display: none; /* ADDED */
+            /* Reset the refund container width on mobile */
+            .refund-container {
+                max-width: 100%;
             }
         }

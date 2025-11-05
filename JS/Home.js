@@ -1,4 +1,35 @@
 
+        // Function to set active navigation based on current page
+        function setActiveNavigation() {
+            // Get the current page filename
+            const currentPage = window.location.pathname.split('/').pop() || 'Home.html';
+            
+            // Remove active class from all nav items
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Set active class based on current page
+            switch(currentPage) {
+                case 'Home.html':
+                    document.getElementById('home-nav').classList.add('active');
+                    break;
+                case 'BusBooking.html':
+                    document.getElementById('booking-nav').classList.add('active');
+                    break;
+                case 'History.html':
+                    document.getElementById('history-nav').classList.add('active');
+                    break;
+                case 'Refund.html':
+                    document.getElementById('refund-nav').classList.add('active');
+                    break;
+                default:
+                    // If no match, default to Home
+                    document.getElementById('home-nav').classList.add('active');
+            }
+        }
+
         // Toggle sidebar functionality
         const toggleMenu = document.querySelector('.toggle-menu');
         const sidebar = document.querySelector('.sidebar');
@@ -6,6 +37,7 @@
         
         toggleMenu.addEventListener('click', function() {
             sidebar.classList.toggle('active');
+            toggleMenu.classList.toggle('hidden');
             
             // Only shift content on larger screens
             if (window.innerWidth > 768) {
@@ -17,6 +49,7 @@
         mainContent.addEventListener('click', function() {
             if (sidebar.classList.contains('active')) {
                 sidebar.classList.remove('active');
+                toggleMenu.classList.remove('hidden');
                 if (window.innerWidth > 768) {
                     mainContent.classList.remove('shifted');
                 }
@@ -31,6 +64,7 @@
                 
                 if (!isClickInsideSidebar && !isClickInsideToggle && sidebar.classList.contains('active')) {
                     sidebar.classList.remove('active');
+                    toggleMenu.classList.remove('hidden');
                 }
             }
         });
@@ -72,11 +106,20 @@
                 navItems.forEach(nav => nav.classList.remove('active'));
                 // Add active class to clicked item
                 this.classList.add('active');
+                
+                // Close sidebar on mobile after navigation
+                if (window.innerWidth <= 768) {
+                    sidebar.classList.remove('active');
+                    toggleMenu.classList.remove('hidden');
+                }
             });
         });
 
         // Chat Functionality
         document.addEventListener('DOMContentLoaded', function() {
+            // Set active navigation on page load
+            setActiveNavigation();
+            
             const userInput = document.getElementById('userInput');
             const sendButton = document.getElementById('sendButton');
             const actionBoxes = document.querySelectorAll('.action-box');

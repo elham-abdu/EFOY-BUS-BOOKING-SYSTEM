@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../CSS/BusBooking.css">
 </head>
 <body>
-    <!-- Toggle Menu Button - ADDED -->
+    <!-- Toggle Menu Button -->
     <div class="toggle-menu">
         <i class="fas fa-bus"></i>
     </div>
@@ -24,29 +24,29 @@
             <div class="logo-text">EfoyBus</div>
         </div>
         
-         <div class="nav-section">
-    <h3>Main Menu</h3>
+        <div class="nav-section">
+            <h3>Main Menu</h3>
 
-    <a class="nav-item active" href="../HTML/Home.html">
-        <i class="fas fa-home"></i>
-        <span>Home</span>
-    </a>
+            <a class="nav-item" href="../HTML/Home.html" id="home-nav">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
 
-    <a class="nav-item" href="../HTML/BusBooking.html">
-        <i class="fas fa-bus-alt"></i>
-        <span>Bus Booking</span>
-    </a>
+            <a class="nav-item" href="../HTML/BusBooking.html" id="booking-nav">
+                <i class="fas fa-bus-alt"></i>
+                <span>Bus Booking</span>
+            </a>
 
-    <a class="nav-item" href="../HTML/History.html">
-        <i class="fas fa-history"></i>
-        <span>Booking History</span>
-    </a>
+            <a class="nav-item" href="../HTML/History.html" id="history-nav">
+                <i class="fas fa-history"></i>
+                <span>Booking History</span>
+            </a>
 
-    <a class="nav-item" href="../HTML/Refund.html">
-        <i class="fas fa-undo-alt"></i>
-        <span>Refund Request</span>
-    </a>
-</div>
+            <a class="nav-item" href="../HTML/Refund.html" id="refund-nav">
+                <i class="fas fa-undo-alt"></i>
+                <span>Refund Request</span>
+            </a>
+        </div>
         
         <div class="divider"></div>
         
@@ -58,6 +58,10 @@
                     <span>Dark Mode</span>
                 </div>
                 <div class="toggle-container">
+                    <div class="toggle-icons">
+                        <i class="fas fa-sun"></i>
+                        <i class="fas fa-moon"></i>
+                    </div>
                     <div class="toggle-circle"></div>
                 </div>
             </div>
@@ -149,7 +153,7 @@
             <!-- Step 2: Select Bus -->
             <div class="form-step" id="step2">
                 <h2 class="step-title"><i class="fas fa-bus"></i> Available Buses</h2>
-                <p id="route-info" style="font-size: 1.1em; margin-bottom: 25px; padding: 15px; background: rgba(58, 134, 255, 0.1); border-radius: 10px;"></p>
+                <p id="route-info" style="font-size: 1.05em; margin-bottom: 20px; padding: 12px; background: rgba(58, 134, 255, 0.1); border-radius: 10px;"></p>
                 <div class="bus-list" id="bus-list">
                     <!-- Buses will be loaded here -->
                 </div>
@@ -157,7 +161,7 @@
                 <!-- Seat Selection -->
                 <div class="seat-selection" id="seat-selection">
                     <h3 class="step-title"><i class="fas fa-chair"></i> Select Your Seats</h3>
-                    <p style="margin-bottom: 20px;">Click on available seats to select them. Green seats are available, red are already booked.</p>
+                    <p style="margin-bottom: 18px;">Click on available seats to select them. Green seats are available, red are already booked.</p>
                     
                     <div class="seat-map-container">
                         <div class="bus-layout" id="bus-layout">
@@ -245,7 +249,6 @@
             </div>
         </div>
     </div>
-
-<script src="../JS/BusBooking.js"></script>
+    <script src="../JS/BusBooking.js"></script>
 </body>
 </html>

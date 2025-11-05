@@ -126,7 +126,7 @@ const buses = {
             arrival: "02:30 PM", 
             price: 450, 
             amenities: ["AC", "WiFi", "TV", "Toilet"], 
-            image: "https://images.unsplash.com/photo-1570125909237-9a5f5d229f19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+            image: "../images/selambus.jpg",
             seats: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33],
             occupiedSeats: [2,5,9,12,15,18,22,25,28,31]
         },
@@ -137,7 +137,8 @@ const buses = {
             arrival: "04:30 PM", 
             price: 500, 
             amenities: ["AC", "WiFi", "TV", "Toilet", "Snacks"], 
-            image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+            image: "../images/skybus.jpg",
+
             seats: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33],
             occupiedSeats: [1,3,6,10,13,16,19,23,26,29,32]
         }
@@ -150,7 +151,7 @@ const buses = {
             arrival: "12:30 PM", 
             price: 350, 
             amenities: ["AC"], 
-            image: "https://images.unsplash.com/photo-1502872366988-afbdaba5daf6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+            image: "../images/habeshabus.jpg",
             seats: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33],
             occupiedSeats: [4,7,8,12,14,17,20,24,27,30,33]
         },
@@ -161,7 +162,7 @@ const buses = {
             arrival: "07:30 PM", 
             price: 400, 
             amenities: ["AC", "WiFi"], 
-            image: "https://images.unsplash.com/photo-1509741102003-ca643e8d906e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+            image: "../images/goldenbus.jpg",
             seats: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33],
             occupiedSeats: [3,6,11,14,16,19,22,25,28,31]
         }
@@ -174,7 +175,7 @@ const buses = {
             arrival: "03:00 PM", 
             price: 550, 
             amenities: ["AC", "WiFi", "TV", "Toilet", "Meal"], 
-            image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+            image: "../images/waliyabus.jpg",
             seats: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33],
             occupiedSeats: [2,5,9,13,15,18,21,24,27,30,33]
         }
@@ -187,7 +188,7 @@ const buses = {
             arrival: "03:30 PM", 
             price: 450, 
             amenities: ["AC", "WiFi", "TV"], 
-            image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+            image: "../images/selambus.jpg",
             seats: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33],
             occupiedSeats: [1,4,7,10,13,16,19,22,25,28,31]
         }

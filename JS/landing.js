@@ -270,7 +270,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
         });
-
         // Form submission (Finish button)
         const finishBtn = document.getElementById('finish-btn');
         if (finishBtn) {
@@ -282,8 +281,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     alert('Account created successfully!');
                     authModal.classList.add('hidden');
                     resetForm();
-                    // Redirect to home page
-                    window.location.href = 'Home.html';
+                    // Redirect to home page - FIXED PATH
+                    window.location.href = 'HTML/Home.html';
                 }
             });
         }

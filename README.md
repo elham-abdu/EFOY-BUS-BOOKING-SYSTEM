@@ -1,4 +1,4 @@
- 🚌 EFOY Bus Booking System
+  EFOY Bus Booking System
 
 The **EFOY Bus Booking System** is a web-based application designed to make bus ticket booking simple, fast, and user-friendly. It allows users to search for available buses, view routes and schedules, and book tickets online.
 
